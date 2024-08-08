@@ -18,10 +18,16 @@ export default function Page() {
         <div className="mx-auto w-full max-w-2xl space-y-8">
           <div className="flex flex-col justify-center space-y-4">
             <BlurFade delay={BLUR_FADE_DELAY}>
-              <Avatar className="size-28 border">
-                <AvatarImage alt={DATA.name} src={DATA.avatarUrl} />
-                <AvatarFallback>{DATA.initials}</AvatarFallback>
-              </Avatar>
+              <div className="relative inline-block">
+                <Avatar className="size-28 border">
+                  <AvatarImage alt={DATA.name} src={DATA.avatarUrl} />
+                  <AvatarFallback>{DATA.initials}</AvatarFallback>
+                </Avatar>
+                <Avatar className="size-8 border absolute bottom-2.5 right-2.5 transform translate-x-1/4 translate-y-1/4">
+                  <AvatarImage alt="Online Badge" src={DATA.badgeUrl} />
+                  <AvatarFallback>O</AvatarFallback>
+                </Avatar>
+              </div>
             </BlurFade>
             <BlurFadeText
               delay={BLUR_FADE_DELAY}
@@ -124,12 +130,13 @@ export default function Page() {
                   My Projects
                 </div>
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                  Check out my latest work
+                  Check out my latest work!
                 </h2>
                 <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  I&apos;ve worked on a variety of projects, from simple
-                  websites to complex web applications. Here are a few of my
-                  favorites.
+                  I&apos;As a software engineer, I’ve developed both mobile
+                  applications and backend services. Here are a few of my
+                  favorite projects, showcasing a range from mobile apps to
+                  complex backend solutions.
                 </p>
               </div>
             </div>
@@ -215,7 +222,7 @@ export default function Page() {
                   href={DATA.contact.social.X.url}
                   className="text-blue-500 hover:underline"
                 >
-                  with a direct question on twitter
+                  with a direct question on linkedin
                 </Link>{" "}
                 and I&apos;ll respond whenever I can. I will ignore all
                 soliciting.
